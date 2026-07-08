@@ -106,3 +106,6 @@ with tab2:
                         st.error(f"系統運行出錯: {str(e)}")
     else:
         st.info("💡 暫時未有數據。請先去『📸 前線外場 - 相片上傳』分頁上傳一張 ULD 金屬板相片。")
+
+# 喺網頁直接印出雲端讀到嘅 Key 開頭 7 個字，睇吓佢係咪真係 "AIzaSy"
+st.write("雲端現時讀到的 Key 開頭是:", os.environ.get("GEMINI_API_KEY", "找不到 Key")[:7])
