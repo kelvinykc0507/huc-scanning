@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import json
 import pandas as pd
 from google import genai
@@ -11,7 +10,7 @@ st.set_page_config(page_title="HUC Scanning Auditor", layout="wide")
 st.title("✈️ Terminal T - HUC Scanning 智能化核對系統")
 
 # 2. 填入你免費的 Gemini API Key (來自 Google AI Studio)
-GEMINI_API_KEY = 'AQ.Ab8RN6K2W-2k9uXuZs5YKrNXpjIfKOYGF40kWE8IiUxYRIAuxA'
+GEMINI_API_KEY = "AQ.Ab8RN6K2W-2k9uXuZs5YKrNXpjIfKOYGF40kWE8IiUxYRIAuxA"
 
 # 3. 設計前後端雙視窗佈局 (前線影相 vs 後台核對)
 tab1, tab2 = st.tabs(["📸 前線外場 - 相片上傳", "🖥️ 辦公室 Clerk - 智能核對與導出"])
@@ -107,6 +106,3 @@ with tab2:
                         st.error(f"系統運行出錯: {str(e)}")
     else:
         st.info("💡 暫時未有數據。請先去『📸 前線外場 - 相片上傳』分頁上傳一張 ULD 金屬板相片。")
-
-# 喺網頁直接印出雲端讀到嘅 Key 開頭 7 個字，睇吓佢係咪真係 "AIzaSy"
-st.write("雲端現時讀到的 Key 開頭是:", os.environ.get("GEMINI_API_KEY", "找不到 Key")[:7])
