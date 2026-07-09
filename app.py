@@ -11,7 +11,7 @@ st.set_page_config(page_title="HUC Scanning Auditor", layout="wide")
 st.title("✈️ Terminal T - HUC Scanning 智能化核對系統")
 
 # 2. 填入你免費的 Gemini API Key (來自 Google AI Studio)
-GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+GEMINI_API_KEY = 'AQ.Ab8RN6K2W-2k9uXuZs5YKrNXpjIfKOYGF40kWE8IiUxYRIAuxA'
 
 # 3. 設計前後端雙視窗佈局 (前線影相 vs 後台核對)
 tab1, tab2 = st.tabs(["📸 前線外場 - 相片上傳", "🖥️ 辦公室 Clerk - 智能核對與導出"])
